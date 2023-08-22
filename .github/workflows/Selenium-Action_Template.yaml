@@ -25,4 +25,4 @@ jobs:
         run: pip install pytest
 
       - name: Running the Python script
-        run: pytest -v
+        run: pipenv run pytest -v -k test_create_process
