@@ -7,10 +7,10 @@ jobs:
     steps:
       - name: Checking out repo
         uses: actions/checkout@v3
-      - name: Setting up Python
-        uses: actions/setup-python@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: "3.11.2"
       - name: Installing package list
         run: apt list --installed    
       - name: Removing previous chrome instances on runner 
