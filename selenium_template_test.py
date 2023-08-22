@@ -26,15 +26,18 @@ options = [
     #"--disable-dev-shm-usage",
     #'--remote-debugging-port=9222'
 ]
+class TestProcess:
 
-for option in options:
-    chrome_options.add_argument(option)
+    def test_create_process(self):
+        for option in options:
+            chrome_options.add_argument(option)
 
     
-driver = webdriver.Chrome(options = chrome_options)
+            driver = webdriver.Chrome(options = chrome_options)
 
-driver.get('http://github.com')
-print(driver.title)
-with open('./GitHub_Action_Results.txt', 'w') as f:
-    f.write(f"This was written with a GitHub action {driver.title}")
+            driver.get('http://github.com')
+            print(driver.title)
+            with open('./GitHub_Action_Results.txt', 'w') as f:
+                f.write(f"This was written with a GitHub action {driver.title}")
+            driver.quit()
 
